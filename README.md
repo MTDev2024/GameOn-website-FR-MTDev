@@ -36,6 +36,16 @@ Suite au départ d’un développeur, j’ai été chargé de finaliser la parti
 
 ---
 
+## 📌 Fonctionnalités à implémenter (issues)
+
+- [ ] Ouverture et fermeture de la modale
+- [ ] Validation des champs du formulaire
+- [ ] Affichage conditionnel des messages d’erreur
+- [ ] Message de confirmation après envoi
+- [ ] Nettoyage et réinitialisation du formulaire
+
+---
+
 
 ## 🚀 Installation
 
@@ -54,23 +64,3 @@ Suite au départ d’un développeur, j’ai été chargé de finaliser la parti
 5. Lancer `index.html` dans un navigateur (clic droit > "Open with Live Server" si l’extension est installée, ou ouvrir manuellement dans un navigateur).
 
 ---
-
-## 📌 Fonctionnalités à implémenter (issues)
-
-- [ ] Ouverture et fermeture de la modale
-- [ ] Validation des champs du formulaire
-- [ ] Affichage conditionnel des messages d’erreur
-- [ ] Message de confirmation après envoi
-- [ ] Nettoyage et réinitialisation du formulaire
-
----
-
-## 👨‍💻 Auteur
-
-Développé par **MTDev** dans le cadre de la formation OpenClassrooms – Parcours Développeur Front-End.
-
----
-
-## 📎 Licence
-
-Projet pédagogique — utilisation libre à des fins d'apprentissage uniquement.
