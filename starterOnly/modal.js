@@ -12,8 +12,20 @@ const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
 
+const closeBtn = document.querySelector(".close");
+
+
+
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+
+
+// close modal
+closeBtn.addEventListener("click", closeModal);
+
+function closeModal() {
+  modalbg.style.display = "none";
+}
 
 
 // launch modal form
