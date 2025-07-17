@@ -1,5 +1,76 @@
-# Projet GameOn
-1. Forkez ce repo ;
-2. Il est conseillé d'utiliser VisualStudio Code et vous pouvez utiliser Docker, mais ce n'est pas obligatoire ;
-3. Il n'y a aucune dépendance ;
-4. Vous ne devez utiliser que du CSS personnalisé et du JavaScript pur, sans jQuery, Bootstrap ou autre librairie.
+# 🕹️ Projet 04 – GameOn
+
+## 🎯 Objectif
+
+Ce projet est réalisé dans le cadre de ma formation.  
+Il s'agit d'assurer la finalisation de la partie front-end d'un site événementiel spécialisé dans les concours de jeux vidéo.
+
+---
+
+## 🧩 Contexte
+
+GameOn est une PME qui organise des conférences et concours dans le domaine du jeu vidéo.  
+Suite au départ d’un développeur, j’ai été chargé de finaliser la partie JavaScript du formulaire d’inscription.
+
+---
+
+## 📋 Spécifications
+
+- 📝 Finaliser la validation du formulaire dans une modale
+- ✅ Vérification de chaque champ en JavaScript natif
+- 💡 Affichage des messages d’erreur en cas de saisie incorrecte
+- 📱 Assurer la compatibilité responsive
+- 💬 Affichage d’un message de confirmation après validation
+
+---
+
+## 🛠️ Contraintes techniques
+
+- HTML / CSS fournis en grande partie
+- Utilisation de :
+  - CSS personnalisé **exclusivement** (pas de framework)
+  - JavaScript **pur** (Vanilla JS)
+- **Aucune bibliothèque** externe autorisée (ni jQuery, ni Bootstrap)
+- Code structuré, lisible et commenté
+- Test manuel de toutes les fonctionnalités
+
+---
+
+
+## 🚀 Installation
+
+1. Depuis Visual Studio Code, ouvrir le menu `Source Control` ou utiliser `Ctrl+Shift+P`, puis choisir :  
+   **Git: Clone**
+
+2. Coller l’URL du dépôt :  
+   ```
+   https://github.com/MTDev2024/GameOn-website-FR-MTDev.git
+   ```
+
+3. Sélectionner un dossier de destination pour cloner le projet.
+
+4. Ouvrir le projet directement dans VSCode si ce n’est pas déjà fait.
+
+5. Lancer `index.html` dans un navigateur (clic droit > "Open with Live Server" si l’extension est installée, ou ouvrir manuellement dans un navigateur).
+
+---
+
+## 📌 Fonctionnalités à implémenter (issues)
+
+- [ ] Ouverture et fermeture de la modale
+- [ ] Validation des champs du formulaire
+- [ ] Affichage conditionnel des messages d’erreur
+- [ ] Message de confirmation après envoi
+- [ ] Nettoyage et réinitialisation du formulaire
+
+---
+
+## 👨‍💻 Auteur
+
+Développé par **MTDev** dans le cadre de la formation OpenClassrooms – Parcours Développeur Front-End.
+
+---
+
+## 📎 Licence
+
+Projet pédagogique — utilisation libre à des fins d'apprentissage uniquement.
