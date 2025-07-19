@@ -1,14 +1,4 @@
-:root {
-  --font-default: "DM Sans", Arial, Helvetica, sans-serif;
-  --font-slab: var(--font-default);
-  --modal-duration: 0.8s;
-}
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 /* Landing Page */
 
@@ -20,19 +10,23 @@ body {
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
-  
   margin: 0 auto;
-}
-
-p {
-  margin-bottom: 0;
-  padding: 0.5vw;
 }
 
 legend {
   margin-bottom: 0;
   padding: 0.5vw;
 }
+
+legend.text-label {
+  font-size: 17px;
+  font-weight: normal;
+  font-family: var(--font-default);
+  margin-bottom: 11px;
+  display: inline-block;
+  padding: 0;
+}
+
 
 img {
   padding-right: 1rem;
@@ -45,6 +39,13 @@ img {
 
 .header-logo {
     float: left;
+}
+
+.header-logo img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .main-navbar {
@@ -205,6 +206,13 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+}
+
+/* Supprime les bordures blanches par défaut dans la modale */
+fieldset.formData {
+  border: none;
+  padding: 0;
+  margin: 0 0 20px 0;
 }
 
 label {
