@@ -69,125 +69,123 @@
               method="get"
               onsubmit="return validate();"
             >
-              <div
-                class="formData">
-                <label>Prénom</label><br>
+              <fieldset class="formData">
+                <label for="firstname">Prénom</label><br>
                 <input
                   class="text-control"
                   type="text"
-                  id="first"
-                  name="first"
+                  id="firstname"
+                  name="firstname"
                   minlength="2"
                 ><br>
-              </div>
-              <div
-                class="formData">
-                <label>Nom</label><br>
+              </fieldset>
+
+              <fieldset class="formData">
+                <label for="lastname">Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
-                  id="last"
-                  name="last"
+                  id="lastname"
+                  name="lastname"
                 ><br>
-              </div>
-              <div
-                class="formData">
-                <label>E-mail</label><br>
+              </fieldset>
+
+              <fieldset class="formData">
+                <label for="email">E-mail</label><br>
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
                 ><br>
-              </div>
-              <div
-                class="formData">
-                <label>Date de naissance</label><br>
+              </fieldset>
+
+              <fieldset class="formData">
+                <label for="birthdate">Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
                 ><br>
-              </div>
-              <div
-                class="formData">
-                <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+              </fieldset>
+
+              <fieldset class="formData">
+                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
-              </div>
-              <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
-              <div
-                class="formData">
-                <input
+              </fieldset>
+
+              <legend class="text-label">À quel tournoi souhaitez-vous participer cette année ?</legend>
+              <fieldset class="formData">
+                <input 
                   class="checkbox-input"
                   type="radio"
-                  id="location1"
+                  id="location-newyork"
                   name="location"
                   value="New York"
                 >
-                <label class="checkbox-label" for="location1">
+                <label class="checkbox-label" for="location-newyork">
                   <span class="checkbox-icon"></span>
                   New York</label
                 >
                 <input
                   class="checkbox-input"
                   type="radio"
-                  id="location2"
+                  id="location-sanfrancisco"
                   name="location"
                   value="San Francisco"
                 >
-                <label class="checkbox-label" for="location2">
+                <label class="checkbox-label" for="location-sanfrancisco">
                   <span class="checkbox-icon"></span>
                   San Francisco</label
                 >
                 <input
                   class="checkbox-input"
                   type="radio"
-                  id="location3"
+                  id="location-seattle"
                   name="location"
                   value="Seattle"
                 >
-                <label class="checkbox-label" for="location3">
+                <label class="checkbox-label" for="location-seattle">
                   <span class="checkbox-icon"></span>
                   Seattle</label
                 >
                 <input
                   class="checkbox-input"
                   type="radio"
-                  id="location4"
+                  id="location-chicago"
                   name="location"
                   value="Chicago"
                 >
-                <label class="checkbox-label" for="location4">
+                <label class="checkbox-label" for="location-chicago">
                   <span class="checkbox-icon"></span>
                   Chicago</label
                 >
                 <input
                   class="checkbox-input"
                   type="radio"
-                  id="location5"
+                  id="location-boston"
                   name="location"
                   value="Boston"
                 >
-                <label class="checkbox-label" for="location5">
+                <label class="checkbox-label" for="location-boston">
                   <span class="checkbox-icon"></span>
                   Boston</label
                 >
                 <input
                   class="checkbox-input"
                   type="radio"
-                  id="location6"
+                  id="location-portland"
                   name="location"
                   value="Portland"
                 >
-                <label class="checkbox-label" for="location6">
+                <label class="checkbox-label" for="location-portland">
                   <span class="checkbox-icon"></span>
                   Portland</label
                 >
-              </div>
+              </fieldset>
 
-              <div
-                class="formData">
+              <fieldset class="formData">
                 <input
                   class="checkbox-input"
                   type="checkbox"
@@ -205,7 +203,8 @@
                   Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
-              </div>
+              </fieldset>
+              
               <input
                 class="btn-submit"
                 type="submit"
