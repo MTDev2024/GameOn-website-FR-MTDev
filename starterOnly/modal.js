@@ -33,5 +33,99 @@ function closeModal() {
 }
 
 
+// Validation formulaire
 
-// Form
+const form = document.getElementById("form");
+
+
+// Ajout d'un écouteur d'événement sur le formulaire pour écouter le submit
+form.addEventListener("submit", (event) => {
+    // Empecher le rechargement de la page
+    event.preventDefault();
+    let formIsValid = true;
+    // Vérification formulaire
+
+    // FIRSTNAME
+    const firstnameInput = document.getElementById("firstname");
+    const firstnameValue = firstnameInput.value.trim(); // trim enlève les espaces
+
+    if (firstnameValue === "") {
+        console.log("Le champ prénom est vide");
+  } else if (firstnameValue.length < 2) {
+        console.log("Le prénom doit contenir au moins 2 caractères");
+  } else {
+        console.log("Le champ prénom est valide :", firstnameValue);
+  }
+
+
+    // LASTNAME
+    const lastnameInput = document.getElementById('lastname');
+    const lastnameValue = lastnameInput.value.trim();
+    
+    if (lastnameValue === "") {
+        console.log("Le champ nom est vide");
+    } else if (lastnameValue.length < 2) {
+        console.log("Le nom doit contenir au moins 2 caractères");
+    } else {
+        console.log("Le champ nom est valide :", lastnameValue);
+  }
+
+    
+    // EMAIL
+    const emailInput = document.getElementById("email");
+    const emailValue = emailInput.value.trim();
+
+    if (emailValue === "") {
+        console.log("Le champ email est vide");
+        formIsValid = false;
+    } else if (!emailInput.checkValidity()) {
+        console.log("Le format de l'email est invalide");
+        formIsValid = false;
+    } else {
+        console.log("Le champ email est valide :", emailValue);
+    }
+
+    // BIRTHDATE
+    const birthdateInput = document.getElementById("birthdate");
+    const birthdateValue = birthdateInput.value.trim();
+
+    if (birthdateValue === "") {
+        console.log("Le champ date de naissance est vide");
+        formIsValid = false;
+    } else if (!birthdateInput.checkValidity()) {
+        console.log("Le format de la date de naissance est invalide");
+        formIsValid = false;
+    } else {
+        console.log("Le champ date de naissance est valide :", birthdateValue);
+    }
+
+
+    // QUANTITY
+    const quantityInput = document.getElementById("quantity");
+    const quantityValue = quantityInput.value.trim();
+
+    if (quantityValue === "") {
+      console.log("Le champ est vide");
+      formIsValid = false;
+    } else if (!quantityInput.checkValidity()) {
+      console.log("Le nombre est invalide");
+      formIsValid = false;
+    } else { 
+      console.log("Le champ quantité est valide :", quantityValue);
+    }
+
+
+
+
+
+ // RESULTAT FINAL
+    if (formIsValid) {
+        console.log("Formulaire complet et valide !");
+        
+    } else {
+        console.log("Le formulaire comporte des erreurs ou n'est pas complet.");
+    }
+
+
+
+});
