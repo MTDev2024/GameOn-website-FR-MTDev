@@ -115,17 +115,41 @@ form.addEventListener("submit", (event) => {
     }
 
 
+    // LOCATION
+    function getSelectedLocation() {
+    const inputs = document.querySelectorAll('input[type="radio"][name="location"]');
+    for (const input of inputs) {
+    if (input.checked) {
+    return input.value.trim(); // La boucle s'arrête quand on trouve l'élément 
+    }
+    }
+    return ""; // Aucun lieu sélectionné
+    }
+    
+    const selectedLocation = getSelectedLocation();
+
+    if (selectedLocation === "") {
+    console.log("Aucun tournoi sélectionné");
+    } else {
+    console.log("Tournoi sélectionné :", selectedLocation);
+    }
 
 
-
- // RESULTAT FINAL
-    if (formIsValid) {
+    // RESULTAT FINAL
+  if (formIsValid) {
         console.log("Formulaire complet et valide !");
         
-    } else {
+  } else {
         console.log("Le formulaire comporte des erreurs ou n'est pas complet.");
-    }
+  }
 
 
 
 });
+
+
+for (let i=0; i < locationInputs.lengt; i++) {
+  if(locationInputs[i].checked) {
+    console.log(locationInputs[i].value)
+  }
+}
