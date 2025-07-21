@@ -45,7 +45,7 @@ form.addEventListener("submit", (event) => {
     let formIsValid = true;
     // Vérification formulaire
 
-    // FIRSTNAME
+    // Prénom
     const firstnameInput = document.getElementById("firstname");
     const firstnameValue = firstnameInput.value.trim(); // trim enlève les espaces
 
@@ -58,7 +58,7 @@ form.addEventListener("submit", (event) => {
   }
 
 
-    // LASTNAME
+    // Nom
     const lastnameInput = document.getElementById('lastname');
     const lastnameValue = lastnameInput.value.trim();
     
@@ -71,7 +71,7 @@ form.addEventListener("submit", (event) => {
   }
 
     
-    // EMAIL
+    // Email
     const emailInput = document.getElementById("email");
     const emailValue = emailInput.value.trim();
 
@@ -85,7 +85,7 @@ form.addEventListener("submit", (event) => {
         console.log("Le champ email est valide :", emailValue);
     }
 
-    // BIRTHDATE
+    // Date de naissance
     const birthdateInput = document.getElementById("birthdate");
     const birthdateValue = birthdateInput.value.trim();
 
@@ -100,7 +100,7 @@ form.addEventListener("submit", (event) => {
     }
 
 
-    // QUANTITY
+    // Nombre de tournois
     const quantityInput = document.getElementById("quantity");
     const quantityValue = quantityInput.value.trim();
 
@@ -115,7 +115,7 @@ form.addEventListener("submit", (event) => {
     }
 
 
-    // LOCATION
+    // Lieux
     function getSelectedLocation() {
     const inputs = document.querySelectorAll('input[type="radio"][name="location"]');
     for (const input of inputs) {
@@ -135,7 +135,12 @@ form.addEventListener("submit", (event) => {
     }
 
 
-    // RESULTAT FINAL
+    // Consentements
+    
+
+
+
+    // RESULTAT FINAL 
   if (formIsValid) {
         console.log("Formulaire complet et valide !");
         
