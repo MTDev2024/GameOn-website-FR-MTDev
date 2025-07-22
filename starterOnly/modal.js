@@ -43,7 +43,8 @@ form.addEventListener("submit", (event) => {
     // Empecher le rechargement de la page
     event.preventDefault();
     let formIsValid = true;
-    // Vérification formulaire
+
+  // Vérification formulaire
 
     // Prénom
     const firstnameInput = document.getElementById("firstname");
@@ -57,7 +58,6 @@ form.addEventListener("submit", (event) => {
         console.log("Le champ prénom est valide :", firstnameValue);
   }
 
-
     // Nom
     const lastnameInput = document.getElementById('lastname');
     const lastnameValue = lastnameInput.value.trim();
@@ -68,7 +68,7 @@ form.addEventListener("submit", (event) => {
         console.log("Le nom doit contenir au moins 2 caractères");
     } else {
         console.log("Le champ nom est valide :", lastnameValue);
-  }
+    }
 
     
     // Email
@@ -136,7 +136,18 @@ form.addEventListener("submit", (event) => {
 
 
     // Consentements
-    
+    const termsConsent = document.getElementById("terms-consent");
+    console.log(termsConsent.checked)
+
+    const termsError = document.getElementById("terms-error");
+
+if (!termsConsent.checked) {
+  termsError.innerText = "Cette case est obligatoire";
+} else {
+  termsError.innerText = "";
+}
+
+   
 
 
 
@@ -153,8 +164,3 @@ form.addEventListener("submit", (event) => {
 });
 
 
-for (let i=0; i < locationInputs.lengt; i++) {
-  if(locationInputs[i].checked) {
-    console.log(locationInputs[i].value)
-  }
-}

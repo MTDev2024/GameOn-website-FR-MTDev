@@ -86,6 +86,7 @@
                   name="firstname"
                   minlength="2"
                 >
+                <div id="firstname-error" class="form-error"></div>
                 <br />
               </fieldset>
 
@@ -99,6 +100,7 @@
                   name="lastname"
                   minlength="2"
                 >
+                <div id="lastname-error" class="form-error"></div>
                 <br />
               </fieldset>
 
@@ -111,6 +113,7 @@
                   id="email"
                   name="email"
                 >
+                <div id="email-error" class="form-error"></div>
                 <br />
               </fieldset>
 
@@ -123,6 +126,7 @@
                   id="birthdate"
                   name="birthdate"
                 >
+                <div id="birthdate-error" class="form-error"></div>
                 <br />
               </fieldset>
 
@@ -139,6 +143,7 @@
                   min="0"
                   max="99"
                 >
+                <div id="quantity-error" class="form-error"></div>
               </fieldset>
 
               <fieldset class="formData">
@@ -233,11 +238,13 @@
                   type="checkbox"
                   id="terms-consent"
                   class="checkbox-input"
+                  required
                 >
-                <label for="terms-consent" class="form-label-checkbox" required>
+                <label for="terms-consent" class="form-label-checkbox" >
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
+                <div id="terms-error" class="form-error"></div>
 
                 <br />
 
@@ -250,6 +257,7 @@
                   <span class="checkbox-icon"></span>
                   Je souhaite être prévenu des prochains évènements.
                 </label>
+                <div id="events-error" class="form-error"></div>
               </fieldset>
 
               <input

@@ -336,6 +336,7 @@ input[data-error]::after {
   top: 19%;
 }
 
+
 .close {
   position: absolute;
   right: 15px;
