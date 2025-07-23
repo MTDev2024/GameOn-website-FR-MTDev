@@ -97,7 +97,6 @@ form.addEventListener("submit", (event) => {
       "Le format de la date de naissance est invalide";
     formIsValid = false;
   } else {
-
     // Vérification que la date n'est pas future
     const today = new Date();
     const enteredDate = new Date(birthdateValue);
@@ -131,41 +130,71 @@ form.addEventListener("submit", (event) => {
   }
 
   // Lieux
+  // Fonction pour récupérer la valeur sélectionnée
   function getSelectedLocation() {
     const inputs = document.querySelectorAll(
       'input[type="radio"][name="location"]'
     );
     for (const input of inputs) {
       if (input.checked) {
-        return input.value.trim(); // La boucle s'arrête quand on trouve l'élément
+        return input.value.trim();
       }
     }
     return ""; // Aucun lieu sélectionné
   }
 
   const selectedLocation = getSelectedLocation();
+  const locationError = document.getElementById("location-error");
 
   if (selectedLocation === "") {
-    console.log("Aucun tournoi sélectionné");
+    locationError.textContent = "Veuillez sélectionner un lieu de tournoi.";
+    formIsValid = false;
   } else {
-    console.log("Tournoi sélectionné :", selectedLocation);
+    locationError.textContent = "";
   }
 
   // Consentements
+  // Conditions
   const termsConsent = document.getElementById("terms-consent");
-  console.log(termsConsent.checked);
-
   const termsError = document.getElementById("terms-error");
 
   if (!termsConsent.checked) {
-    termsError.innerText = "Cette case est obligatoire";
+    termsError.innerText =
+      "Vous devez avoir lu et accepté les conditions pour vous inscrire";
+    formIsValid = false;
   } else {
     termsError.innerText = "";
   }
 
-  // RESULTAT FINAL
+  // Newsletter
+  const eventsConsent = document.getElementById("events-consent");
+  const isSubscribedToEvents = eventsConsent.checked;
+
+  console.log(
+    "Souhaite être prévenu des prochains événements :",
+    isSubscribedToEvents
+  );
+
+  // VALIDATION FINALE
+
   if (formIsValid) {
+    // Tous les champs obligatoires sont valides
     console.log("Formulaire complet et valide !");
+
+    // Récupération des données des formulaires pour traitement ou envoi
+    const formData = {
+      firstname: firstnameValue,
+      lastname: lastnameValue,
+      email: emailValue,
+      birthdate: birthdateValue,
+      quantity: quantityValue,
+      location: selectedLocation,
+      subscribeNewsletter: isSubscribedToEvents,
+    };
+
+    console.log("Données du formulaire :", formData);
+    // Envoi ou soumission possible de formData (fetch par exemple)
+    // form.submit();
   } else {
     console.log("Le formulaire comporte des erreurs ou n'est pas complet.");
   }

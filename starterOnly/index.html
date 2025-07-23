@@ -152,9 +152,12 @@
               </fieldset>
 
               <fieldset class="formData">
+                
                 <legend class="text-label">
                   À quel tournoi souhaitez-vous participer cette année ?
                 </legend>
+
+                <div id="location-error" class="form-error"></div>
 
                 <input
                   class="checkbox-input"
@@ -162,7 +165,11 @@
                   id="location-new-york"
                   name="location"
                   value="New York"
+                  required
                 >
+                <!-- "required" sur un seul des input / même nom de classe pour les autres inputs-->  
+
+
 
                 <label class="form-label-radio" for="location-new-york">
                   <span class="checkbox-icon"></span>
@@ -262,7 +269,7 @@
                   <span class="checkbox-icon"></span>
                   Je souhaite être prévenu des prochains évènements.
                 </label>
-                <div id="events-error" class="form-error"></div>
+                
               </fieldset>
 
               <input
