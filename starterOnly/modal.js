@@ -177,9 +177,12 @@ form.addEventListener("submit", (event) => {
 
   // VALIDATION FINALE
 
+  const validMessage = document.getElementById("valid-message");
+
   if (formIsValid) {
     // Tous les champs obligatoires sont valides
-    console.log("Formulaire complet et valide !");
+    // console.log("Formulaire complet et valide !");
+    validMessage.innerText = "Votre inscription a été validée, merci.";
 
     // Récupération des données des formulaires pour traitement ou envoi
     const formData = {

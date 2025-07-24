@@ -349,6 +349,19 @@ input[data-error]::after {
 }
 
 
+.form-validation {
+  color: #205d12;
+  font-size: 16px;
+  padding-top: 8px;
+  transition: opacity 0.3s ease;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.form-validation:empty {
+  display: none;
+  opacity: 0;
+}
 
 .close {
   position: absolute;
