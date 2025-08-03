@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="utf-8" >
+    <meta charset="utf-8" />
     <title>GameOn - Marathon Jeux Vidéos</title>
 
-    <meta name="viewport" content="width=device-width,initial-scale=1" >
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <link rel="stylesheet" href="CSS/global.css" >
-    <link rel="stylesheet" href="CSS/modal.css" >
+    <link rel="stylesheet" href="CSS/global.css" />
+    <link rel="stylesheet" href="CSS/modal.css" />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    >
+    />
     <link
       href="https://fonts.googleapis.com/css?family=DM+Sans"
       rel="stylesheet"
-    >
+    />
   </head>
 
   <body>
-    
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-        <img alt="logo" src="images/logo.png" >
+        <img alt="logo" src="images/logo.png" />
       </div>
       <div class="main-navbar">
         <a href="#" class="active"><span>Accueil</span></a>
@@ -42,7 +41,7 @@
         <div class="hero-content">
           <h1 class="hero-headline">
             Marathon national
-            <br >
+            <br />
             de jeux vidéos
           </h1>
 
@@ -55,7 +54,7 @@
         </div>
 
         <div class="hero-img">
-          <img src="images/bg_img.jpg" alt="img" >
+          <img src="images/bg_img.jpg" alt="img" />
         </div>
 
         <button class="btn-signup modal-btn">je m'inscris</button>
@@ -74,11 +73,16 @@
           <div class="modal-body">
             <h2 id="modal-title" class="sr-only">Inscription à l'événement</h2>
 
-            <form name="reserve" action="index.html" method="get" id="form" novalidate >
-
+            <form
+              name="reserve"
+              action="index.html"
+              method="get"
+              id="form"
+              novalidate
+            >
               <fieldset class="formData">
                 <label for="firstname">Prénom</label>
-                <br >
+
                 <input
                   class="text-control"
                   type="text"
@@ -86,14 +90,13 @@
                   name="firstname"
                   minlength="2"
                   required
-                >
+                />
                 <div id="firstname-error" class="form-error"></div>
-                <br >
               </fieldset>
 
               <fieldset class="formData">
                 <label for="lastname">Nom</label>
-                <br >
+
                 <input
                   class="text-control"
                   type="text"
@@ -101,44 +104,41 @@
                   name="lastname"
                   minlength="2"
                   required
-                >
+                />
                 <div id="lastname-error" class="form-error"></div>
-                <br >
               </fieldset>
 
               <fieldset class="formData">
                 <label for="email">E-mail</label>
-                <br >
+
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
                   required
-                >
+                />
                 <div id="email-error" class="form-error"></div>
-                <br >
               </fieldset>
 
               <fieldset class="formData">
                 <label for="birthdate">Date de naissance</label>
-                <br >
+
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
                   required
-                >
+                />
                 <div id="birthdate-error" class="form-error"></div>
-                <br >
               </fieldset>
 
               <fieldset class="formData">
                 <label for="quantity">
                   À combien de tournois GameOn avez-vous déjà participé ?
                 </label>
-                <br >
+
                 <input
                   type="number"
                   class="text-control"
@@ -147,12 +147,11 @@
                   min="0"
                   max="99"
                   required
-                >
+                />
                 <div id="quantity-error" class="form-error"></div>
               </fieldset>
 
               <fieldset class="formData">
-                
                 <legend class="text-label">
                   À quel tournoi souhaitez-vous participer cette année ?
                 </legend>
@@ -166,10 +165,8 @@
                   name="location"
                   value="New York"
                   required
-                >
-                <!-- "required" sur un seul des input / même nom de classe pour les autres inputs-->  
-
-
+                />
+                <!-- "required" sur un seul des input / même nom de classe pour les autres inputs-->
 
                 <label class="form-label-radio" for="location-new-york">
                   <span class="checkbox-icon"></span>
@@ -182,7 +179,7 @@
                   id="location-sanfrancisco"
                   name="location"
                   value="San Francisco"
-                >
+                />
 
                 <label class="form-label-radio" for="location-sanfrancisco">
                   <span class="checkbox-icon"></span>
@@ -195,7 +192,7 @@
                   id="location-seattle"
                   name="location"
                   value="Seattle"
-                >
+                />
 
                 <label class="form-label-radio" for="location-seattle">
                   <span class="checkbox-icon"></span>
@@ -208,7 +205,7 @@
                   id="location-chicago"
                   name="location"
                   value="Chicago"
-                >
+                />
 
                 <label class="form-label-radio" for="location-chicago">
                   <span class="checkbox-icon"></span>
@@ -221,7 +218,7 @@
                   id="location-boston"
                   name="location"
                   value="Boston"
-                >
+                />
 
                 <label class="form-label-radio" for="location-boston">
                   <span class="checkbox-icon"></span>
@@ -234,7 +231,7 @@
                   id="location-portland"
                   name="location"
                   value="Portland"
-                >
+                />
 
                 <label class="form-label-radio" for="location-portland">
                   <span class="checkbox-icon"></span>
@@ -251,25 +248,23 @@
                   id="terms-consent"
                   class="checkbox-input"
                   required
-                >
-                <label for="terms-consent" class="form-label-checkbox" >
+                />
+                <label for="terms-consent" class="form-label-checkbox">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <div id="terms-error" class="form-error"></div>
 
-                <br >
-
                 <input
-                  type="checkbox" 
+                  type="checkbox"
                   id="events-consent"
-                  class="checkbox-input" >
+                  class="checkbox-input"
+                />
 
                 <label for="events-consent" class="form-label-checkbox">
                   <span class="checkbox-icon"></span>
                   Je souhaite être prévenu des prochains évènements.
                 </label>
-                
               </fieldset>
 
               <input
@@ -277,10 +272,9 @@
                 type="submit"
                 class="button"
                 value="C'est parti"
-              >
+              />
 
               <div id="valid-message" class="form-validation"></div>
-              
             </form>
           </div>
         </div>
