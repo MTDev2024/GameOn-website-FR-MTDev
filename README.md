@@ -38,11 +38,11 @@ Suite au départ d’un développeur, j’ai été chargé de finaliser la parti
 
 ## 📌 Fonctionnalités à implémenter (issues)
 
-- [ ] Ouverture et fermeture de la modale
-- [ ] Validation des champs du formulaire
-- [ ] Affichage conditionnel des messages d’erreur
-- [ ] Message de confirmation après envoi
-- [ ] Nettoyage et réinitialisation du formulaire
+- [x] Ouverture et fermeture de la modale
+- [x] Validation des champs du formulaire
+- [x] Affichage conditionnel des messages d’erreur
+- [x] Message de confirmation après envoi
+- [x] Nettoyage et réinitialisation du formulaire
 
 ---
 

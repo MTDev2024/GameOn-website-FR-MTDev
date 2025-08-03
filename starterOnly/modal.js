@@ -27,6 +27,18 @@ function closeModal() {
   modalbg.classList.remove("show");
 }
 
+
+// Fermer la modale avec echap
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeModal();
+  }
+});
+
+
+
+
+
 // Validation formulaire
 const form = document.getElementById("form");
 
