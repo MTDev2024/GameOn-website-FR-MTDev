@@ -363,7 +363,9 @@ input[data-error]::after {
   opacity: 0;
 }
 
-.close {
+
+button.close {
+  all: unset;
   position: absolute;
   right: 15px;
   top: 15px;
@@ -374,8 +376,8 @@ input[data-error]::after {
   transform: scale(0.7);
 }
 
-.close:before,
-.close:after {
+button.close:before,
+button.close:after {
   position: absolute;
   left: 15px;
   content: " ";
@@ -384,11 +386,11 @@ input[data-error]::after {
   background-color: #fff;
 }
 
-.close:before {
+button.close:before {
   transform: rotate(45deg);
 }
 
-.close:after {
+button.close:after {
   transform: rotate(-45deg);
 }
 
