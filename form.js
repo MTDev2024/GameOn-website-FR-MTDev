@@ -43,14 +43,15 @@ function validateEmail() {
   const emailError = document.getElementById("email-error");
   const value = emailInput.value.trim();
 
-  if (value === "") {
-    emailError.textContent = "Veuillez entrer votre adresse email.";
+  // Regex stricte : accepte .fr, .com, .co.uk, etc.
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,10})+$/;
+
+  if (!emailRegex.test(value)) {
+    emailError.textContent =
+      "Veuillez entrer une adresse email valide (ex : nom@domaine.fr).";
     return false;
   }
-  if (!emailInput.checkValidity()) {
-    emailError.textContent = "Le format de l'adresse email est invalide.";
-    return false;
-  }
+
   emailError.textContent = "";
   return true;
 }
