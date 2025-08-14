@@ -1,4 +1,7 @@
+// ---------------------- SÉLECTION DU FORMULAIRE ----------------------
 const form = document.getElementById("form");
+
+// ---------------------- VALIDATION CHAMPS ----------------------
 
 // Validation prénom
 function validateFirstname() {
@@ -42,8 +45,6 @@ function validateEmail() {
   const emailInput = document.getElementById("email");
   const emailError = document.getElementById("email-error");
   const value = emailInput.value.trim();
-
-  // Regex stricte : accepte .fr, .com, .co.uk, etc.
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,10})+$/;
 
   if (!emailRegex.test(value)) {
@@ -51,7 +52,6 @@ function validateEmail() {
       "Veuillez entrer une adresse email valide (ex : nom@domaine.fr).";
     return false;
   }
-
   emailError.textContent = "";
   return true;
 }
@@ -72,7 +72,6 @@ function validateBirthdate() {
     return false;
   }
 
-  // Vérification que la date n'est pas dans le futur
   const today = new Date();
   const enteredDate = new Date(value);
   today.setHours(0, 0, 0, 0);
@@ -82,7 +81,6 @@ function validateBirthdate() {
       "La date de naissance ne peut pas être dans le futur.";
     return false;
   }
-
   birthdateError.textContent = "";
   return true;
 }
@@ -137,28 +135,20 @@ function validateTermsConsent() {
   return true;
 }
 
-// Fonction globale de validation
+// ---------------------- VALIDATION GLOBALE ----------------------
 function validate() {
-  const validFirstname = validateFirstname();
-  const validLastname = validateLastname();
-  const validEmail = validateEmail();
-  const validBirthdate = validateBirthdate();
-  const validQuantity = validateQuantity();
-  const validLocation = validateLocation();
-  const validTerms = validateTermsConsent();
-
   return (
-    validFirstname &&
-    validLastname &&
-    validEmail &&
-    validBirthdate &&
-    validQuantity &&
-    validLocation &&
-    validTerms
+    validateFirstname() &&
+    validateLastname() &&
+    validateEmail() &&
+    validateBirthdate() &&
+    validateQuantity() &&
+    validateLocation() &&
+    validateTermsConsent()
   );
 }
 
-// Gestion des événements en temps réel
+// ---------------------- ÉVÉNEMENTS EN TEMPS RÉEL ----------------------
 document
   .getElementById("firstname")
   .addEventListener("input", validateFirstname);
@@ -168,33 +158,43 @@ document
   .getElementById("birthdate")
   .addEventListener("change", validateBirthdate);
 document.getElementById("quantity").addEventListener("input", validateQuantity);
-
-// Validation des boutons radio "location"
 document
   .querySelectorAll('input[type="radio"][name="location"]')
   .forEach((input) => {
     input.addEventListener("change", validateLocation);
   });
-
-// Consentement : checkbox
 document
   .getElementById("terms-consent")
   .addEventListener("change", validateTermsConsent);
 
-// Soumission du formulaire
+// ---------------------- SOUMISSION DU FORMULAIRE ----------------------
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-
   const formIsValid = validate();
-
   const validMessage = document.getElementById("valid-message");
 
   if (formIsValid) {
+    // --- AFFICHAGE MESSAGE SUCCÈS ---
     validMessage.classList.remove("form-error");
     validMessage.classList.add("form-success");
     validMessage.textContent = "Votre inscription a été validée, merci.";
 
-    // Récupération des données
+    // --- OUVRIR LA MODALE DE CONFIRMATION ---
+    if (typeof launchConfirmationModal === "function") {
+      launchConfirmationModal();
+
+      // --- RÉINITIALISATION DU FORMULAIRE ---
+      form.reset();
+
+      // --- EFFACER LES MESSAGES D'ERREUR ---
+      document
+        .querySelectorAll(".error-message")
+        .forEach((el) => (el.textContent = ""));
+    } else {
+      console.error("launchConfirmationModal n'est pas défini !");
+    }
+
+    // --- RÉCUPÉRATION DES DONNÉES DU FORMULAIRE ---
     const formData = {
       firstname: document.getElementById("firstname").value.trim(),
       lastname: document.getElementById("lastname").value.trim(),
@@ -205,9 +205,8 @@ form.addEventListener("submit", (event) => {
         const inputs = document.querySelectorAll(
           'input[type="radio"][name="location"]'
         );
-        for (const input of inputs) {
+        for (const input of inputs)
           if (input.checked) return input.value.trim();
-        }
         return "";
       })(),
       termsConsent: document.getElementById("terms-consent").checked,
@@ -215,8 +214,6 @@ form.addEventListener("submit", (event) => {
     };
 
     console.log("Données du formulaire :", formData);
-
-    // Ici on peut utiliser un fetch ou un form.submit() si besoin
   } else {
     validMessage.classList.remove("form-success");
     validMessage.classList.add("form-error");
