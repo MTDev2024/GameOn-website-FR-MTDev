@@ -341,12 +341,7 @@ input[data-error]::after {
   transition: opacity 0.3s ease;
 }
 
-.form-error:empty {
-  display: none;
-  opacity: 0;
-}
-
-.form-validation {
+.form-success {
   color: #205d12;
   font-size: 16px;
   padding-top: 8px;
@@ -355,7 +350,8 @@ input[data-error]::after {
   text-align: center;
 }
 
-.form-validation:empty {
+.form-success:empty,
+.form-error:empty {
   display: none;
   opacity: 0;
 }

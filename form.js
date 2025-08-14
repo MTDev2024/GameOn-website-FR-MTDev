@@ -190,6 +190,8 @@ form.addEventListener("submit", (event) => {
   const validMessage = document.getElementById("valid-message");
 
   if (formIsValid) {
+    validMessage.classList.remove("form-error");
+    validMessage.classList.add("form-success");
     validMessage.textContent = "Votre inscription a été validée, merci.";
 
     // Récupération des données
@@ -216,6 +218,8 @@ form.addEventListener("submit", (event) => {
 
     // Ici on peut utiliser un fetch ou un form.submit() si besoin
   } else {
+    validMessage.classList.remove("form-success");
+    validMessage.classList.add("form-error");
     validMessage.textContent = "";
     console.log("Le formulaire comporte des erreurs ou n'est pas complet.");
   }
