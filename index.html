@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="CSS/global.css" />
     <link rel="stylesheet" href="CSS/modal.css" />
+    <link rel="stylesheet" href="CSS/confirmation_modal.css" />
 
     <link
       rel="stylesheet"
@@ -60,7 +61,7 @@
         <button class="btn-signup modal-btn">je m'inscris</button>
       </section>
 
-      <!-- MODALE -->
+      <!-- DEBUT MODALE INSCRIPTION -->
 
       <div
         class="bground"
@@ -69,7 +70,6 @@
         aria-labelledby="modal-title"
       >
         <div class="content">
-          <!-- <span class="close"></span> -->
           <button class="close" aria-label="Fermer la modale"></button>
 
           <div class="modal-body">
@@ -281,13 +281,14 @@
         </div>
       </div>
 
-      <!-- FIN MODALE -->
+      <!-- FIN MODALE INSCRIPTION-->
     </main>
 
     <footer>
       <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
     </footer>
 
+    <!-- DEBUT MODALE CONFIRMATION-->
     <div
       id="confirmation_modal"
       class="modal"
@@ -296,15 +297,28 @@
       aria-labelledby="modal-title"
     >
       <div class="confirmation_modal_content">
-        <button id="close_button" class="close" aria-label="Fermer la modale">
-          ✖
-        </button>
-        <h2 id="modal-title" class="sr-only">Inscription à l'événement</h2>
-        <p>Merci pour votre inscription</p>
+        <div class="modal-body">
+          <button
+            id="close_button"
+            class="close"
+            aria-label="Fermer la modale"
+          ></button>
+          <h2 id="modal-title" class="sr-only">Inscription à l'événement</h2>
+          <p>
+            Merci pour <br />
+            votre inscription
+          </p>
+          <button id="confirm_close" class="close_bottom" type="button">
+            Fermer
+          </button>
+        </div>
       </div>
     </div>
+    <!-- FIN MODALE CONFIRMATION-->
 
-    <script src="modal.js"></script>
-    <script src="form.js"></script>
+    <script src="nav.js" defer></script>
+    <script src="test2.js" defer></script>
+    <script src="inscription_modal.js" defer></script>
+    <script src="confirmation_modal.js" defer></script>
   </body>
 </html>

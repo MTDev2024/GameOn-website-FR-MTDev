@@ -1,7 +1,9 @@
 #confirmation_modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
   left: 0;
   top: 0;
   height: 100%;
@@ -11,19 +13,71 @@
 }
 
 #confirmation_modal.show {
-  display: block;
+  display: flex;
 }
 
-button.close {
-  all: unset;
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 32px;
-  height: 32px;
-  opacity: 1;
+/* Contenu principal de la modale */
+.confirmation_modal_content {
+  display: flex;
+  flex-direction: column;
+  margin: 5% auto;
+  width: 100%;
+  min-height: 1000px;
+  max-width: 500px;
+  max-height: 100%;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
+  background: #232323;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* Corps de la modale qui occupe l’espace dispo */
+.modal-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 8%;
+  margin: 15px auto;
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Bouton en bas */
+.close_bottom {
+  font-size: 145%;
+  background: #fe142f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
   cursor: pointer;
-  transform: scale(0.7);
+  margin-top: auto; /* pousse le bouton en bas */
+}
+
+/* Bouton croix en haut */
+button.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button.close:before,
@@ -42,4 +96,20 @@ button.close:before {
 
 button.close:after {
   transform: rotate(-45deg);
+}
+
+/* ----- Mobile : pleine hauteur, nav visible, pas d’opacité ----- */
+@media (max-width: 768px) {
+  #confirmation_modal {
+    background-color: transparent;
+    align-items: flex-end; /* pour coller la modale sous la nav */
+  }
+
+  .confirmation_modal_content {
+    min-height: calc(100vh - 90px); /* pleine hauteur moins la nav */
+    border-radius: 0;
+    margin: 0;
+    max-width: none;
+    width: 100%;
+  }
 }
