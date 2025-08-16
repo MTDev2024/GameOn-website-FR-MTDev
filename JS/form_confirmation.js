@@ -1,9 +1,44 @@
+// ---------------------- MODALE DE CONFIRMATION ----------------------
+function launchConfirmationModal() {
+  const confirmationModal = document.getElementById("confirmation_modal");
+  if (confirmationModal) confirmationModal.classList.add("show");
+}
+window.launchConfirmationModal = launchConfirmationModal;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const confirmationModal = document.getElementById("confirmation_modal");
+  if (!confirmationModal) return;
+
+  const closeButton = document.getElementById("close_button");
+  const confirmClose = document.getElementById("confirm_close");
+  const form = document.getElementById("form");
+
+  function closeConfirmationModal() {
+    confirmationModal.classList.remove("show");
+
+    // --- RÉINITIALISATION DU FORMULAIRE ET EFFACER LES MESSAGES ---
+    form.reset();
+    document
+      .querySelectorAll(".error-message")
+      .forEach((el) => (el.textContent = ""));
+    const validMessage = document.getElementById("valid-message");
+    if (validMessage) validMessage.textContent = "";
+  }
+
+  if (closeButton)
+    closeButton.addEventListener("click", closeConfirmationModal);
+  if (confirmClose)
+    confirmClose.addEventListener("click", closeConfirmationModal);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeConfirmationModal();
+  });
+});
+
 // ---------------------- SÉLECTION DU FORMULAIRE ----------------------
 const form = document.getElementById("form");
 
 // ---------------------- VALIDATION CHAMPS ----------------------
-
-// Validation prénom
 function validateFirstname() {
   const firstnameInput = document.getElementById("firstname");
   const firstnameError = document.getElementById("firstname-error");
@@ -22,7 +57,6 @@ function validateFirstname() {
   return true;
 }
 
-// Validation nom
 function validateLastname() {
   const lastnameInput = document.getElementById("lastname");
   const lastnameError = document.getElementById("lastname-error");
@@ -40,7 +74,6 @@ function validateLastname() {
   return true;
 }
 
-// Validation email
 function validateEmail() {
   const emailInput = document.getElementById("email");
   const emailError = document.getElementById("email-error");
@@ -56,7 +89,6 @@ function validateEmail() {
   return true;
 }
 
-// Validation date de naissance
 function validateBirthdate() {
   const birthdateInput = document.getElementById("birthdate");
   const birthdateError = document.getElementById("birthdate-error");
@@ -85,7 +117,6 @@ function validateBirthdate() {
   return true;
 }
 
-// Validation quantité
 function validateQuantity() {
   const quantityInput = document.getElementById("quantity");
   const quantityError = document.getElementById("quantity-error");
@@ -103,7 +134,6 @@ function validateQuantity() {
   return true;
 }
 
-// Validation lieu sélectionné
 function validateLocation() {
   const locationError = document.getElementById("location-error");
   const inputs = document.querySelectorAll(
@@ -121,7 +151,6 @@ function validateLocation() {
   return true;
 }
 
-// Validation consentements
 function validateTermsConsent() {
   const termsConsent = document.getElementById("terms-consent");
   const termsError = document.getElementById("terms-error");
@@ -174,6 +203,27 @@ form.addEventListener("submit", (event) => {
   const validMessage = document.getElementById("valid-message");
 
   if (formIsValid) {
+    // --- RÉCUPÉRATION DES DONNÉES DU FORMULAIRE ---
+    const formData = {
+      firstname: document.getElementById("firstname").value.trim(),
+      lastname: document.getElementById("lastname").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      birthdate: document.getElementById("birthdate").value.trim(),
+      quantity: document.getElementById("quantity").value.trim(),
+      location: (() => {
+        const inputs = document.querySelectorAll(
+          'input[type="radio"][name="location"]'
+        );
+        for (const input of inputs)
+          if (input.checked) return input.value.trim();
+        return "";
+      })(),
+      termsConsent: document.getElementById("terms-consent").checked,
+      subscribeNewsletter: document.getElementById("events-consent").checked,
+    };
+
+    console.log("Données du formulaire :", formData);
+
     // --- AFFICHAGE MESSAGE SUCCÈS ---
     validMessage.classList.remove("form-error");
     validMessage.classList.add("form-success");
@@ -182,45 +232,8 @@ form.addEventListener("submit", (event) => {
     // --- OUVRIR LA MODALE DE CONFIRMATION ---
     if (typeof launchConfirmationModal === "function") {
       launchConfirmationModal();
-
-      // --- RÉCUPÉRATION DES DONNÉES DU FORMULAIRE ---
-      const formData = {
-        firstname: document.getElementById("firstname").value.trim(),
-        lastname: document.getElementById("lastname").value.trim(),
-        email: document.getElementById("email").value.trim(),
-        birthdate: document.getElementById("birthdate").value.trim(),
-        quantity: document.getElementById("quantity").value.trim(),
-        location: (() => {
-          const inputs = document.querySelectorAll(
-            'input[type="radio"][name="location"]'
-          );
-          for (const input of inputs)
-            if (input.checked) return input.value.trim();
-          return "";
-        })(),
-        termsConsent: document.getElementById("terms-consent").checked,
-        subscribeNewsletter: document.getElementById("events-consent").checked,
-      };
-
-      console.log("Données du formulaire :", formData);
     } else {
-      validMessage.classList.remove("form-success");
-      validMessage.classList.add("form-error");
-      validMessage.textContent = "";
-      console.log("Le formulaire comporte des erreurs ou n'est pas complet.");
+      console.error("launchConfirmationModal n'est pas défini !");
     }
-    // --- RÉINITIALISATION DU FORMULAIRE ---
-    form.reset();
-
-    // --- EFFACER LES MESSAGES D'ERREUR ---
-    document
-      .querySelectorAll(".error-message")
-      .forEach((el) => (el.textContent = ""));
-  } else {
-    console.error("launchConfirmationModal n'est pas défini !");
   }
-
-  // --- EFFACER LE MESSAGE DE VALIDATION ---
-  const validationMessage = document.querySelector(".validation-message");
-  if (validationMessage) validationMessage.textContent = "";
 });
