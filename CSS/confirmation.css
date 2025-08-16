@@ -22,7 +22,8 @@
   flex-direction: column;
   margin: 5% auto;
   width: 100%;
-  min-height: 1000px;
+  min-height: 1100px;
+  min-width: 550px;
   max-width: 500px;
   max-height: 100%;
   animation-name: modalopen;
@@ -65,6 +66,11 @@ p {
   margin-top: auto; /* pousse le bouton en bas */
 }
 
+.close_bottom:hover {
+  background: #3876ac;
+}
+
+
 /* Bouton croix en haut */
 button.close {
   position: absolute;
@@ -96,20 +102,4 @@ button.close:before {
 
 button.close:after {
   transform: rotate(-45deg);
-}
-
-/* ----- Mobile : pleine hauteur, nav visible, pas d’opacité ----- */
-@media (max-width: 768px) {
-  #confirmation_modal {
-    background-color: transparent;
-    align-items: flex-end; /* pour coller la modale sous la nav */
-  }
-
-  .confirmation_modal_content {
-    min-height: calc(100vh - 90px); /* pleine hauteur moins la nav */
-    border-radius: 0;
-    margin: 0;
-    max-width: none;
-    width: 100%;
-  }
 }
