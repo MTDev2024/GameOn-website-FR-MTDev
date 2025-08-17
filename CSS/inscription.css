@@ -4,8 +4,8 @@ body {
   flex-direction: column;
   background-image: url("background.png");
   font-family: var(--font-default);
-  font-size: 18px;
-  max-width: 1300px;
+  font-size: 1.1rem;
+  max-width: 82rem;
 }
 
 legend {
@@ -14,10 +14,10 @@ legend {
 }
 
 legend.text-label {
-  font-size: 17px;
+  font-size: 1rem;
   font-weight: normal;
   font-family: var(--font-default);
-  margin-bottom: 11px;
+  margin-bottom: 0.7rem;
   display: inline-block;
   padding: 0;
 }
@@ -51,23 +51,23 @@ img {
   display: block;
   color: #000000;
   text-align: center;
-  padding: 12px 12px;
-  margin: 5px;
+  padding: 0.75rem 0.75rem;
+  margin: 0.3rem;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-family: Roboto, sans-serif;
 }
 
 .topnav a:hover {
   background-color: #ff0000;
   color: #ffffff;
-  border-radius: 15px;
+  border-radius: 1rem;
 }
 
 .topnav a.active {
   background-color: #ff0000;
   color: #ffffff;
-  border-radius: 15px;
+  border-radius: 1rem;
 }
 
 .topnav .icon {
@@ -78,6 +78,7 @@ img {
   .topnav a {
     display: none;
   }
+
   .topnav a.icon {
     float: right;
     display: block;
@@ -110,7 +111,7 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
+    margin-top: -1rem;
   }
 }
 
@@ -120,7 +121,7 @@ main {
   padding-top: 0.5vw;
   padding-left: 2vw;
   padding-right: 2vw;
-  margin: 1px 20px 15px;
+  margin: 3.5% 3.5% 0 3.5%;
   border-radius: 2rem;
   text-align: justify;
 }
@@ -142,8 +143,8 @@ main {
 }
 
 .footer {
-  margin: 20px;
-  padding: 10px;
+  margin: 1.25rem;
+  padding: 0.6rem;
   font-family: var(--font-slab);
 }
 
@@ -154,7 +155,7 @@ main {
   margin-top: 0.5em;
   padding: 1em;
   color: #fff;
-  border-radius: 15px;
+  border-radius: 1rem;
   cursor: pointer;
   font-size: 1rem;
 }
@@ -190,7 +191,7 @@ main {
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
   background: #232323;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   overflow: hidden;
   position: relative;
   color: #fff;
@@ -206,7 +207,7 @@ main {
 fieldset.formData {
   border: none;
   padding: 0;
-  margin: 0 0 20px 0;
+  margin: 0 0 1.25rem 0;
 }
 
 label {
@@ -219,17 +220,17 @@ label {
 
 input {
   padding: 0.5rem;
-  border: 0.8px solid #ccc;
+  border: 0.05rem solid #ccc;
   outline: none;
 }
 
 .text-control {
-	margin: 0;
-	padding: 0.5rem;
-	width: 100%;
-	border-radius: 0.5rem;
-	font-size: 1rem;
-	height: 3rem;
+  margin: 0;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  height: 3rem;
 }
 
 .formData[data-error]::after {
@@ -237,8 +238,8 @@ input {
   font-size: 0.4em;
   color: #e54858;
   display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
+  margin-top: 0.45rem;
+  margin-bottom: 0.45rem;
   text-align: right;
   line-height: 0.3;
   opacity: 0;
@@ -250,29 +251,29 @@ input {
 }
 
 .formData[data-error-visible="true"] .text-control {
-  border: 2px solid #e54858;
+  border: 0.125rem solid #e54858;
 }
 
 .form-label-radio,
 .form-label-checkbox {
   position: relative;
-  margin-left: 36px;
-  font-size: 12px;
+  margin-left: 2.25rem;
+  font-size: 0.75rem;
   font-weight: normal;
 }
 
 .form-label-radio .checkbox-icon,
 .form-label-checkbox .checkbox-icon {
   display: block;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #279e7a;
+  width: 1.3rem;
+  height: 1.3rem;
+  border: 0.15rem solid #279e7a;
   border-radius: 50%;
-  text-indent: 29px;
+  text-indent: 1.8rem;
   white-space: nowrap;
   position: absolute;
-  left: -30px;
-  top: -1px;
+  left: -1.85rem;
+  top: -0.06rem;
   transition: 0.3s;
 }
 
@@ -280,11 +281,11 @@ input {
 .form-label-radio .checkbox-icon::after,
 .form-label-checkbox .checkbox-icon::after {
   content: "";
-  width: 13px;
-  height: 13px;
+  width: 0.85rem;
+  height: 0.85rem;
   background-color: #279e7a;
   border-radius: 50%;
-  text-indent: 29px;
+  text-indent: 1.85rem;
   white-space: nowrap;
   position: absolute;
   left: 50%;
@@ -298,12 +299,12 @@ input {
   display: none;
 }
 
-.checkbox-input:checked + .form-label-radio .checkbox-icon::after,
-.checkbox-input:checked + .form-label-checkbox .checkbox-icon::after {
+.checkbox-input:checked+.form-label-radio .checkbox-icon::after,
+.checkbox-input:checked+.form-label-checkbox .checkbox-icon::after {
   opacity: 1;
 }
 
-.checkbox-input:checked + .form-label-checkbox .checkbox-icon {
+.checkbox-input:checked+.form-label-checkbox .checkbox-icon {
   background: #279e7a;
 }
 
@@ -314,11 +315,11 @@ input {
 }
 
 .form-label-checkbox .checkbox-icon::after {
-  width: 7px;
-  height: 4px;
-  border-radius: 2px;
+  width: 0.45rem;
+  height: 0.3rem;
+  border-radius: 0.13rem;
   background: transparent;
-  border: 2px solid transparent;
+  border: 0.13rem solid transparent;
   border-bottom-color: #fff;
   border-left-color: #fff;
   transform: rotate(-55deg);
@@ -328,17 +329,17 @@ input {
 
 .form-error {
   color: #e54858;
-  font-size: 16px;
-  padding-top: 8px;
+  font-size: 1rem;
+  padding-top: 0.5rem;
   transition: opacity 0.3s ease;
 }
 
 .form-success {
   color: #205d12;
-  font-size: 16px;
-  padding-top: 8px;
+  font-size: 1rem;
+  padding-top: 0.5rem;
   transition: opacity 0.3s ease;
-  margin-top: 10px;
+  margin-top: 0.6rem;
   text-align: center;
 }
 
@@ -351,10 +352,10 @@ input {
 button.close {
   all: unset;
   position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 32px;
-  height: 32px;
+  right: 0.6rem;
+  top: 0.6rem;
+  width: 2rem;
+  height: 2rem;
   opacity: 1;
   cursor: pointer;
   transform: scale(0.7);
@@ -363,10 +364,10 @@ button.close {
 button.close:before,
 button.close:after {
   position: absolute;
-  left: 15px;
+  left: 0.9rem;
   content: " ";
-  height: 33px;
-  width: 3px;
+  height: 2.06rem;
+  width: 0.19rem;
   background-color: #fff;
 }
 
@@ -383,13 +384,14 @@ button.close:after {
   background: #fe142f;
   display: block;
   margin: 0 auto;
-  border-radius: 7px;
+  border-radius: 0.45rem;
   font-size: 1rem;
-  padding: 12px 82px;
+  padding: 0.8rem 5.125rem;
   color: #fff;
   cursor: pointer;
   border: 0;
 }
+
 /* custom select styles */
 .custom-select {
   position: relative;
@@ -401,6 +403,7 @@ button.close:after {
 .custom-select select {
   display: none;
 }
+
 .select-selected {
   background-color: #fff;
 }
@@ -409,11 +412,11 @@ button.close:after {
 .select-selected:after {
   position: absolute;
   content: "";
-	top: 0.6rem;
-	right: 0.8rem;
-	width: 0.7rem;
-	height: 0.7rem;
-	border: 0.2rem solid transparent;
+  top: 0.6rem;
+  right: 0.8rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 0.2rem solid transparent;
   border-bottom-color: #f00;
   border-left-color: #f00;
   transform: rotate(-48deg);
@@ -459,22 +462,22 @@ button.close:after {
 
 /* custom select end */
 .text-label {
-font-weight: normal;
-	font-size: 1rem;
+  font-weight: normal;
+  font-size: 1rem;
 }
 
 .hero-section {
-  min-height: 93vh;
+  min-height: 60vh;
   border-radius: 0.5rem;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   overflow: hidden;
   box-shadow: 0 0.1rem 0.5rem 0.1rem rgba(0, 0, 0, 0.2);
-	margin-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
 }
 
 .hero-content {
-  padding: 51px 67px;
+  padding: 3.190rem 4.190rem;
   grid-column: span 4;
   background: #232323;
   color: #fff;
@@ -489,11 +492,11 @@ font-weight: normal;
   height: 100%;
   background: #232323;
   position: absolute;
-  right: -80px;
+  right: -5rem;
   top: 0;
 }
 
-.hero-content > * {
+.hero-content>* {
   position: relative;
   z-index: 1;
 }
@@ -506,18 +509,18 @@ font-weight: normal;
 
 .hero-text {
   width: 146%;
+  font-size: 1.5rem;
   font-weight: normal;
-  margin-top: 57px;
+  margin-top: 3.56rem;
   padding: 0;
 }
 
 .btn-signup {
   outline: none;
   text-transform: capitalize;
-  font-size: 1.3rem;
-  padding: 15px 23px;
+  padding: 0.9rem 1.45rem;
   margin: 0;
-  margin-top: 59px;
+  margin-top: 3.7rem;
 }
 
 .hero-img {
@@ -535,18 +538,18 @@ font-weight: normal;
   color: #fe142f;
   padding: 0;
   font-size: 1rem;
-  margin: 60px 0 30px;
+  margin: 2.25rem 0 1.875rem;
   font-weight: bolder;
 }
 
-.hero-section > .btn-signup {
+.hero-section>.btn-signup {
   display: none;
 }
 
 footer {
   padding-left: 2vw;
   padding-right: 2vw;
-  margin: 0 20px;
+  margin: 0 1.3rem;
 }
 
 @media screen and (max-width: 800px) {
@@ -558,7 +561,7 @@ footer {
   .hero-content {
     background: #fff;
     color: #000;
-    padding: 20px;
+    padding: 1.3rem;
   }
 
   .hero-content::after {
@@ -580,18 +583,18 @@ footer {
   }
 
   .hero-img img {
-    border-radius: 10px;
-    margin-top: 40px;
+    border-radius: 0.6rem;
+    margin-top: 3rem;
   }
 
-  .hero-section > .btn-signup {
+  .hero-section>.btn-signup {
     display: block;
-    margin: 32px auto 10px;
-    padding: 12px 35px;
+    margin: 2rem auto 0.6rem;
+    padding: 0.8rem 2.190rem;
   }
 
   .copyrights {
-    margin-top: 50px;
+    margin-top: 3rem;
     text-align: center;
   }
 }
@@ -599,8 +602,9 @@ footer {
 @keyframes modalopen {
   from {
     opacity: 0;
-    transform: translateY(-150px);
+    transform: translateY(-9.375rem);
   }
+
   to {
     opacity: 1;
   }

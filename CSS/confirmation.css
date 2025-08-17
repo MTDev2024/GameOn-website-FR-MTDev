@@ -1,3 +1,4 @@
+/* --- Overlay de la modale de confirmation --- */
 #confirmation_modal {
   display: none;
   position: fixed;
@@ -16,53 +17,52 @@
   display: flex;
 }
 
-/* Contenu principal de la modale */
+/* --- Conteneur principal de la modale --- */
 .confirmation_modal_content {
   display: flex;
   flex-direction: column;
   margin: 5% auto;
   width: 100%;
-  min-height: 1100px;
-  min-width: 550px;
-  max-width: 500px;
+  min-height: 1160px;
+  min-width: 280px;
+  max-width: 520px;     
   max-height: 100%;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
   background: #232323;
-  border-radius: 10px;
+  border-radius: 0.6rem;
   overflow: hidden;
   position: relative;
   color: #fff;
-  padding: 30px 20px;
+  padding: 1.3rem 1rem;
   text-align: center;
 }
 
-/* Corps de la modale qui occupe l’espace dispo */
 .modal-body {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  padding: 15px 8%;
-  margin: 15px auto;
+  padding: 1rem 8%;
+  margin: 1rem auto;
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 2.25rem;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 }
 
-/* Bouton en bas */
+/* --- Bouton en bas --- */
 .close_bottom {
-  font-size: 145%;
   background: #fe142f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  margin: 0 auto;
+  border-radius: 0.45rem;
+  font-size: 1rem;
+  padding: 0.8rem 5.125rem;
   color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 1rem;
   cursor: pointer;
+  border: 0;
   margin-top: auto; /* pousse le bouton en bas */
 }
 
@@ -70,17 +70,16 @@ p {
   background: #3876ac;
 }
 
-
-/* Bouton croix en haut */
+/* --- Bouton croix en haut --- */
 button.close {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 0.6rem;
+  right: 0.6rem;
   color: #fff;
   border: none;
   background: transparent;
-  border-radius: 8px;
-  padding: 12px;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -89,10 +88,10 @@ button.close {
 button.close:before,
 button.close:after {
   position: absolute;
-  left: 15px;
+  left: 0.9rem;
   content: " ";
-  height: 33px;
-  width: 3px;
+  height: 2.06rem;
+  width: 0.19rem;
   background-color: #fff;
 }
 
@@ -102,4 +101,17 @@ button.close:before {
 
 button.close:after {
   transform: rotate(-45deg);
+}
+
+
+@media (max-width: 800px) {
+  .confirmation_modal_content {
+    min-height: 800px;
+    width: 100%;
+    margin: 1rem auto;
+  }
+
+  .confirmation_modal_content p {
+    font-size: 2rem; 
+  }
 }

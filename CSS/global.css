@@ -20,10 +20,10 @@
 
 .sr-only {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  width: 0.06rem;
+  height: 0.06rem;
   padding: 0;
-  margin: -1px;
+  margin: -0.06rem;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
