@@ -1,6 +1,6 @@
-* {
-  outline: 1px solid red; /* voir les boîtes qui débordent */
-}
+/* * {
+  outline: 1px solid red;
+} */
 
 
 body {
@@ -478,7 +478,6 @@ button.close:after {
 }
 
 .hero-section {
-  /* min-height: 60vh; */
   max-width: 1240px; /* comme la maquette */
   min-height: 657px;
   border-radius: 0.5rem;
@@ -608,6 +607,17 @@ footer {
   .copyrights {
     margin-top: 3rem;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+.content {
+    height: calc(100vh - 80px); 
+    margin-top: 80px;
+  }
+
+  .bground {
+    background-color: transparent;
   }
 }
 
