@@ -1,3 +1,8 @@
+* {
+  outline: 1px solid red; /* voir les boîtes qui débordent */
+}
+
+
 body {
   margin: 0 auto;
   display: flex;
@@ -5,7 +10,11 @@ body {
   background-image: url("background.png");
   font-family: var(--font-default);
   font-size: 1.1rem;
-  max-width: 82rem;
+  max-width: 1450px; 
+  min-height: 100vh; 
+  background-size: cover;
+  background-position: center;
+  
 }
 
 legend {
@@ -116,12 +125,14 @@ img {
 }
 
 main {
+  max-width: 1240px;
   font-weight: bolder;
   color: black;
   padding-top: 0.5vw;
   padding-left: 2vw;
   padding-right: 2vw;
-  margin: 3.5% 3.5% 0 3.5%;
+  /* margin: 3.5% 3.5% 0 3.5%; */
+  margin: 0 auto;
   border-radius: 2rem;
   text-align: justify;
 }
@@ -467,7 +478,9 @@ button.close:after {
 }
 
 .hero-section {
-  min-height: 60vh;
+  /* min-height: 60vh; */
+  max-width: 1240px; /* comme la maquette */
+  min-height: 657px;
   border-radius: 0.5rem;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -477,13 +490,12 @@ button.close:after {
 }
 
 .hero-content {
-  padding: 3.190rem 4.190rem;
+  padding: 3rem;
   grid-column: span 4;
   background: #232323;
   color: #fff;
   position: relative;
   text-align: left;
-  min-width: 424px;
 }
 
 .hero-content::after {
@@ -508,14 +520,14 @@ button.close:after {
 }
 
 .hero-text {
-  width: 146%;
+  width: 145%;
   font-size: 1.5rem;
   font-weight: normal;
   margin-top: 3.56rem;
   padding: 0;
 }
 
-.btn-signup {
+.hero-content .btn-signup {
   outline: none;
   text-transform: capitalize;
   padding: 0.9rem 1.45rem;
