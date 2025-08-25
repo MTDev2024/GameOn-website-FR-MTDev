@@ -32,26 +32,35 @@
   overflow: hidden;
   position: relative;
   color: #fff;
-  padding-top: 0.6rem;
   padding-bottom: 1rem;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
+  border: solid 3px red;
 }
 
-.modal-body {
+.confirmation-modal-body {
+  position: relative;
+  height: auto;
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 1rem 8%;
   margin: 1rem auto;
   justify-content: center;
   text-align: center;
+  width: 100%;
+  border: solid 3px green;
 }
 
-p {
+
+
+
+.confirmation-modal-body p {
   font-size: 2.25rem;
   font-weight: bold;
-  margin-bottom: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
 }
 
 /* --- Bouton en bas --- */
@@ -73,36 +82,40 @@ p {
 }
 
 /* --- Bouton croix en haut --- */
-button.close {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.6rem;
+#close_button{
+    position: absolute;   
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
   color: #fff;
-  border: none;
   background: transparent;
-  border-radius: 0.5rem;
-  padding: 0.75rem;
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;
+
+  border: none;
+  z-index: 20;
 }
 
 button.close:before,
 button.close:after {
   position: absolute;
-  left: 0.9rem;
-  content: " ";
-  height: 2.06rem;
-  width: 0.19rem;
+  content: "";
+  top: 0;
+  left: 50%;
+  height: 2rem;
+  width: 0.2rem;
   background-color: #fff;
+  transform-origin: center;
 }
 
 button.close:before {
-  transform: rotate(45deg);
+  transform: translateX(-50%) rotate(45deg);
 }
 
 button.close:after {
-  transform: rotate(-45deg);
+  transform: translateX(-50%) rotate(-45deg);
 }
 
 /* --- RESPONSIVE --- */
