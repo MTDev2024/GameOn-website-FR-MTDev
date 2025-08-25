@@ -35,7 +35,6 @@
   padding-bottom: 1rem;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
-  border: solid 3px red;
 }
 
 .confirmation-modal-body {
@@ -48,7 +47,6 @@
   justify-content: center;
   text-align: center;
   width: 100%;
-  border: solid 3px green;
 }
 
 
@@ -122,7 +120,7 @@ button.close:after {
 @media screen and (max-width: 768px) {
   #confirmation_modal {
     align-items: flex-start; /* laisse nav visible */
-    padding-top: 80px;
+    padding-top: 65px;
     padding-bottom: 0;
     background-color: transparent;
   }
@@ -130,7 +128,7 @@ button.close:after {
   .confirmation_modal_content {
     flex: 1 1 auto; 
 
-    height: calc(100vh - var(--nav-height, 80px));
+    height: calc(100vh - var(--nav-height, 65px));
   }
 }
 

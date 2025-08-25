@@ -541,7 +541,7 @@ footer {
 
   .content {
     position: fixed;
-    top: 65px;
+    top:65px;
     left: 0;
     width: 100%;
     height: calc(100vh - 65px);
