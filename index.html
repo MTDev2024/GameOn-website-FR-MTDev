@@ -56,7 +56,6 @@
     </section>
 
     <!-- DEBUT MODALE INSCRIPTION -->
-
     <div class="bground" role="dialog" aria-modal="true" aria-labelledby="inscription-modal-title">
       <div class="content">
         <button class="close" aria-label="Fermer la modale"></button>
@@ -167,31 +166,34 @@
         </div>
       </div>
     </div>
-
     <!-- FIN MODALE INSCRIPTION-->
+    <!-- DEBUT MODALE CONFIRMATION-->
+    <div id="confirmation_modal" class="modal" role="dialog" aria-modal="true"
+      aria-labelledby="confirmation-modal-title">
+      <div class="confirmation_modal_content">
+        <div class="modal-body">
+          <button id="close_button" class="close" aria-label="Fermer la modale"></button>
+          <h2 id="confirmation-modal-title" class="sr-only">Inscription à l'événement</h2>
+          <p>
+            Merci pour <br>
+            votre inscription
+          </p>
+          <button id="confirm_close" class="close_bottom" type="button">
+            Fermer
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- FIN MODALE CONFIRMATION-->
+
+
   </main>
 
   <footer>
     <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
   </footer>
 
-  <!-- DEBUT MODALE CONFIRMATION-->
-  <div id="confirmation_modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="confirmation-modal-title">
-    <div class="confirmation_modal_content">
-      <div class="modal-body">
-        <button id="close_button" class="close" aria-label="Fermer la modale"></button>
-        <h2 id="confirmation-modal-title" class="sr-only">Inscription à l'événement</h2>
-        <p>
-          Merci pour <br>
-          votre inscription
-        </p>
-        <button id="confirm_close" class="close_bottom" type="button">
-          Fermer
-        </button>
-      </div>
-    </div>
-  </div>
-  <!-- FIN MODALE CONFIRMATION-->
+
 
   <script src="JS/nav.js" defer></script>
   <script src="JS/inscription_modal.js" defer></script>
