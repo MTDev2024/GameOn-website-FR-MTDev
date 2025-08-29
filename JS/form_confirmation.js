@@ -44,9 +44,10 @@ function validateFirstname() {
   const firstnameInput = document.getElementById("firstname");
   // Récupération de la div qui sert à afficher l'erreur
   const firstnameError = document.getElementById("firstname-error");
-// Récupération de la saisie, suppression des espaces avant et après pour ne pas valider un champ contenant uniquement des espaces. 
+  // Récupération de la saisie, suppression des espaces avant et après
+  // pour ne pas valider un champ contenant uniquement des espaces.
   const value = firstnameInput.value.trim();
-// Si l'input est vide on affiche l'erreur
+  // Si l'input est vide on affiche l'erreur
   if (value === "") {
     firstnameError.textContent = "Veuillez entrer votre prénom.";
     return false;
@@ -55,7 +56,7 @@ function validateFirstname() {
   if (value.length < 2) {
     firstnameError.textContent =
       "Le prénom doit contenir au moins 2 caractères.";
-      // si ce n'est pas le cas la saisie n'est pas validée
+    // si ce n'est pas le cas la saisie n'est pas validée
     return false;
   }
   // On efface au cas où un message était présent d'une saisie antérieure
@@ -86,13 +87,13 @@ function validateEmail() {
   const emailError = document.getElementById("email-error");
   const value = emailInput.value.trim();
   // Regex adresse email :
-// ^                          -> début de la chaîne
-// [a-zA-Z0-9._%+-]+          -> au moins 1 caractère valide avant le @
-//                              (lettres, chiffres, point, underscore, %, +, -)
-// @                          -> caractère arobase obligatoire
-// [a-zA-Z0-9-]+              -> domaine (lettres, chiffres, tirets)
-// (\.[a-zA-Z]{2,10})+        -> au moins un point suivi de 2 à 10 lettres (extensions .fr, .com, .co.uk)
-// $                          -> fin de la chaîne
+  // ^                          -> début de la chaîne
+  // [a-zA-Z0-9._%+-]+          -> au moins 1 caractère valide avant le @
+  //                              (lettres, chiffres, point, underscore, %, +, -)
+  // @                          -> caractère arobase obligatoire
+  // [a-zA-Z0-9-]+              -> domaine (lettres, chiffres, tirets)
+  // (\.[a-zA-Z]{2,10})+        -> au moins un point suivi de 2 à 10 lettres (extensions .fr, .com, .co.uk)
+  // $                          -> fin de la chaîne
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,10})+$/;
 
   if (!emailRegex.test(value)) {
@@ -172,7 +173,8 @@ function validateLocation() {
     locationError.textContent = "Veuillez sélectionner un lieu de tournoi.";
     return false;
   }
-  // Sinon pas de message, effacement au cas ou le message était affiché d'une précédente tentative
+  // Sinon pas de message, effacement au cas ou le message était affiché
+  // d'une précédente tentative
   locationError.textContent = "";
   // Validation du champs
   return true;
@@ -192,7 +194,7 @@ function validateTermsConsent() {
 }
 
 // ---------------------- VALIDATION GLOBALE ----------------------
-// vérifie le formulaire en appelant chaque fonction individuellement 
+// vérifie le formulaire en appelant chaque fonction individuellement
 function validate() {
   return (
     // && = ET logique
@@ -210,24 +212,32 @@ function validate() {
 
 // ---------------------- ÉVÉNEMENTS EN TEMPS RÉEL ----------------------
 // Validation en direct lors de la saisie ou modification des champs
-document.getElementById("firstname").addEventListener("input", validateFirstname);
+document
+  .getElementById("firstname")
+  .addEventListener("input", validateFirstname);
 document.getElementById("lastname").addEventListener("input", validateLastname);
 document.getElementById("email").addEventListener("input", validateEmail);
-document.getElementById("birthdate").addEventListener("change", validateBirthdate);
+document
+  .getElementById("birthdate")
+  .addEventListener("change", validateBirthdate);
 document.getElementById("quantity").addEventListener("input", validateQuantity);
-document.querySelectorAll('input[type="radio"][name="location"]')
+document
+  .querySelectorAll('input[type="radio"][name="location"]')
   .forEach((input) => {
     input.addEventListener("change", validateLocation);
   });
-document.getElementById("terms-consent").addEventListener("change", validateTermsConsent);
+document
+  .getElementById("terms-consent")
+  .addEventListener("change", validateTermsConsent);
 
 // ---------------------- SOUMISSION DU FORMULAIRE ----------------------
 form.addEventListener("submit", (event) => {
   // empeche le reload de la page
   event.preventDefault();
-  
-  const formIsValid = validate(); // validation globale de tous les champs
-  const validMessage = document.getElementById("valid-message"); // zone d'affichage du message de validation
+  // validation globale de tous les champs
+  const formIsValid = validate();
+  // zone d'affichage du message de validation
+  const validMessage = document.getElementById("valid-message");
 
   if (formIsValid) {
     // --- RÉCUPÉRATION DES DONNÉES DU FORMULAIRE ---
@@ -260,7 +270,7 @@ form.addEventListener("submit", (event) => {
     if (typeof launchConfirmationModal === "function") {
       launchConfirmationModal(); // ouverture de la modale si la fonction existe
     } else {
-      console.error("launchConfirmationModal n'est pas défini !"); // avertissement dans la console 
+      console.error("launchConfirmationModal n'est pas défini !"); // avertissement dans la console
     }
   }
 });

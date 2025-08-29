@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalBtn = document.querySelectorAll(".modal-btn");
   // on récupère tous les boutons qui ouvrent la modale
 
-  // Fonction fermer la modale
+  // Fonction fermer modale
   function closeFormModal() {
     modalbg.classList.remove("show");
     // On enlève la classe show pour cacher la modale
@@ -34,8 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   modalBtn.forEach((btn) =>
     btn.addEventListener("click", launchInscriptionModal)
   );
-  // on ajoute un écouteur d'événement 'click'
-  // click sur modalBtn -> launchInscriptionModal est exécutée
+  // écouteur d'événement click sur modalBtn -> launchInscriptionModal s'exécute
   // -> ajoute la classe 'show' à la modale et l'affiche
 
   // Bouton fermeture
@@ -46,10 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // -> retire la classe 'show'et la modale disparaît
 
   // Fermer via Échap
-  // écoute tous les appuis de touches dans le document
+  // écoute les appuis de touches
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeFormModal();
   });
-  // si la touche appuyée est 'Escape' -> closeFormModal est executée
-  // -> fermeture de la modale
+  // si la touche appuyée est 'Escape' -> closeFormModal s'execute
+  // -> fermeture
 });
